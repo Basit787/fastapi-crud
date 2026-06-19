@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from app.models.users import User
 from app.schemas.user_schema import CreateUserSchema
 from app.schemas.user_schema import UpdateUserSchema
+from app.utils.security import hash_password
 
 
 class UserService:
@@ -14,6 +15,7 @@ class UserService:
         user = User(
             name=payload.name,
             email=payload.email,
+            hashed_password=hash_password(payload.password),
         )
 
         db.add(user)

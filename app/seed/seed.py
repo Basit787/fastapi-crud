@@ -1,6 +1,7 @@
 from app.config.database import SessionLocal
 from app.models.users import User
 from app.models.products import Product
+from app.utils.security import hash_password
 
 
 def seed_users(db):
@@ -9,8 +10,16 @@ def seed_users(db):
         return
 
     users = [
-        User(name="James", email="james@example.com"),
-        User(name="Jane", email="jane@example.com"),
+        User(
+            name="James",
+            email="james@example.com",
+            hashed_password=hash_password("password123"),
+        ),
+        User(
+            name="Jane",
+            email="jane@example.com",
+            hashed_password=hash_password("password123"),
+        ),
     ]
 
     db.add_all(users)

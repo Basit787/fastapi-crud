@@ -5,6 +5,8 @@ from sqlalchemy.orm import Session
 
 
 from app.config.database import get_db
+from app.dependencies.auth import get_current_user
+from app.models.users import User
 from app.schemas.user_schema import (
     CreateUserSchema,
     UpdateUserSchema,
@@ -25,6 +27,7 @@ router = APIRouter(
 def create_user(
     payload: CreateUserSchema,
     db: Session = Depends(get_db),
+    _: User = Depends(get_current_user),
 ):
     return UserService.create_user(
         db,
@@ -38,6 +41,7 @@ def create_user(
 )
 def get_users(
     db: Session = Depends(get_db),
+    _: User = Depends(get_current_user),
 ):
     return UserService.get_users(db)
 
@@ -49,6 +53,7 @@ def get_users(
 def get_user(
     user_id: int,
     db: Session = Depends(get_db),
+    _: User = Depends(get_current_user),
 ):
     user = UserService.get_user(
         db,
@@ -72,6 +77,7 @@ def update_user(
     user_id: int,
     payload: UpdateUserSchema,
     db: Session = Depends(get_db),
+    _: User = Depends(get_current_user),
 ):
     user = UserService.update_user(
         db,
@@ -92,6 +98,7 @@ def update_user(
 def delete_user(
     user_id: int,
     db: Session = Depends(get_db),
+    _: User = Depends(get_current_user),
 ):
     user = UserService.delete_user(
         db,
