@@ -24,7 +24,7 @@ jobs:
         run: uv sync --dev
 
       - name: Run tests with 95% coverage minimum
-        run: bash scripts/check-coverage.sh
+        run: bash src/scripts/check-coverage.sh
 
       - name: Lint
         run: uv run ruff check .

@@ -27,11 +27,11 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["."]
+testpaths = ["src/tests"]
+pythonpath = [".", "src"]
 
 [tool.coverage.run]
-source = ["app"]
+source = ["src/app", "src/lib"]
 
 [tool.coverage.report]
 fail_under = 95

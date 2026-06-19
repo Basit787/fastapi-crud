@@ -1,11 +1,11 @@
 start:
-	bash ./scripts/start.sh
+	bash ./src/scripts/start.sh
 
 seed:
-	uv run python -m app.seed.seed
+	PYTHONPATH=src uv run python -m lib.seed
 
 test:
-	bash scripts/check-coverage.sh
+	bash src/scripts/check-coverage.sh
 
 precommit-install:
 	uv run pre-commit install
