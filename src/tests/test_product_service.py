@@ -1,6 +1,6 @@
-from app.products.schemas import CreateProductSchema
-from app.products.schemas import UpdateProductSchema
-from app.products.service import ProductService
+from app.schemas.product import CreateProductSchema
+from app.schemas.product import UpdateProductSchema
+from app.services.product import ProductService
 
 
 def test_product_service_crud(db_session):

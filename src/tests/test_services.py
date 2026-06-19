@@ -1,9 +1,9 @@
-from app.auth.schemas import RegisterSchema
-from app.auth.service import AuthService
-from lib.roles import Role
-from app.users.schemas import CreateUserSchema
-from app.users.schemas import UpdateUserSchema
-from app.users.service import UserService
+from app.core.roles import Role
+from app.schemas.auth import RegisterSchema
+from app.schemas.user import CreateUserSchema
+from app.schemas.user import UpdateUserSchema
+from app.services.auth import AuthService
+from app.services.user import UserService
 from fastapi import HTTPException
 import pytest
 

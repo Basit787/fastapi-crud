@@ -3,8 +3,8 @@ from sqlalchemy import String
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
-from lib.database import Base
-from lib.roles import Role
+from app.core.database import Base
+from app.core.roles import Role
 
 
 class User(Base):

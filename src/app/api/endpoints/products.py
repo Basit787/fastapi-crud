@@ -3,13 +3,13 @@ from fastapi import Depends
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-from app.auth.rbac import require_permission
-from lib.database import get_db
-from app.products.schemas import CreateProductSchema
-from app.products.schemas import ProductResponseSchema
-from app.products.schemas import UpdateProductSchema
-from app.products.service import ProductService
-from app.users.model import User
+from app.api.deps import require_permission
+from app.core.database import get_db
+from app.models.user import User
+from app.schemas.product import CreateProductSchema
+from app.schemas.product import ProductResponseSchema
+from app.schemas.product import UpdateProductSchema
+from app.services.product import ProductService
 
 router = APIRouter(
     prefix="/products",

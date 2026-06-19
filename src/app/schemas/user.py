@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from pydantic import EmailStr
 
-from lib.roles import Role
+from app.core.roles import Role
 
 
 class CreateUserSchema(BaseModel):

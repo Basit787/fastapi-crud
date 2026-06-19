@@ -2,7 +2,7 @@ start:
 	bash ./src/scripts/start.sh
 
 seed:
-	PYTHONPATH=src uv run python -m lib.seed
+	PYTHONPATH=src uv run python -m app.db.seed
 
 test:
 	bash src/scripts/check-coverage.sh

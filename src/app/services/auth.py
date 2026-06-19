@@ -1,14 +1,14 @@
-from fastapi import HTTPException
-from fastapi import status
 from sqlalchemy.orm import Session
 
-from app.auth.schemas import RegisterSchema
-from app.auth.security import create_access_token
-from app.auth.security import hash_password
-from app.auth.security import verify_password
-from lib.roles import Role
-from app.users.model import User
-from app.users.service import UserService
+from app.core.roles import Role
+from app.core.security import create_access_token
+from app.core.security import hash_password
+from app.core.security import verify_password
+from app.models.user import User
+from app.schemas.auth import RegisterSchema
+from app.services.user import UserService
+from fastapi import HTTPException
+from fastapi import status
 
 
 class AuthService:

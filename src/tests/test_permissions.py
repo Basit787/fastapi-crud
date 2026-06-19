@@ -1,5 +1,5 @@
-from app.auth.permissions import has_permission
-from lib.roles import Role
+from app.core.permissions import has_permission
+from app.core.roles import Role
 
 
 def test_admin_has_all_permissions():

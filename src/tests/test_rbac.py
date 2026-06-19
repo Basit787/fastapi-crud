@@ -1,9 +1,9 @@
-from app.auth.rbac import require_admin_or_self
-from app.auth.rbac import require_permission
-from app.auth.rbac import require_roles
-from app.auth.security import hash_password
-from lib.roles import Role
-from app.users.model import User
+from app.api.deps import require_admin_or_self
+from app.api.deps import require_permission
+from app.api.deps import require_roles
+from app.core.roles import Role
+from app.core.security import hash_password
+from app.models.user import User
 from fastapi import HTTPException
 import pytest
 

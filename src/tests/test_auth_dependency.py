@@ -19,8 +19,8 @@ def test_token_for_missing_user_returns_401(client, invalid_user_token_headers):
 def test_token_without_subject_returns_401(client):
     import jwt
 
-    from lib.settings import JWT_ALGORITHM
-    from lib.settings import JWT_SECRET_KEY
+    from app.core.config import JWT_ALGORITHM
+    from app.core.config import JWT_SECRET_KEY
 
     token = jwt.encode({"exp": 9999999999}, JWT_SECRET_KEY, algorithm=JWT_ALGORITHM)
 

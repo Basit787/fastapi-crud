@@ -5,9 +5,9 @@ from datetime import timedelta
 import bcrypt
 import jwt
 
-from lib.settings import ACCESS_TOKEN_EXPIRE_MINUTES
-from lib.settings import JWT_ALGORITHM
-from lib.settings import JWT_SECRET_KEY
+from app.core.config import ACCESS_TOKEN_EXPIRE_MINUTES
+from app.core.config import JWT_ALGORITHM
+from app.core.config import JWT_SECRET_KEY
 
 
 def hash_password(password: str) -> str:

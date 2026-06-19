@@ -3,7 +3,7 @@ from sqlalchemy import String
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
-from lib.database import Base
+from app.core.database import Base
 
 
 class Product(Base):

@@ -1,4 +1,4 @@
-from lib.roles import Role
+from app.core.roles import Role
 
 ROLE_PERMISSIONS: dict[Role, set[str]] = {
     Role.ADMIN: {

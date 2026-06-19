@@ -1,9 +1,9 @@
-from app.auth.security import hash_password
-from app.products.model import Product
-from app.users.model import User
-from lib.roles import Role
-from lib.seed import seed_products
-from lib.seed import seed_users
+from app.core.roles import Role
+from app.core.security import hash_password
+from app.db.seed import seed_products
+from app.db.seed import seed_users
+from app.models.product import Product
+from app.models.user import User
 
 
 def test_seed_users_skips_when_data_exists(db_session):

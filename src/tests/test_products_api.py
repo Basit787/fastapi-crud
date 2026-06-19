@@ -1,5 +1,5 @@
 def test_get_products_public(client, db_session):
-    from app.products.model import Product
+    from app.models.product import Product
 
     db_session.add(
         Product(name="Laptop", description="Portable computer", price=1200.0)
@@ -13,7 +13,7 @@ def test_get_products_public(client, db_session):
 
 
 def test_get_product_public(client, db_session):
-    from app.products.model import Product
+    from app.models.product import Product
 
     product = Product(name="Tablet", description="Touch device", price=500.0)
     db_session.add(product)
@@ -63,7 +63,7 @@ def test_create_product_user_forbidden(client, user_headers):
 
 
 def test_update_product_manager_allowed(client, manager_headers, db_session):
-    from app.products.model import Product
+    from app.models.product import Product
 
     product = Product(name="Watch", description="Wearable", price=300.0)
     db_session.add(product)
@@ -91,7 +91,7 @@ def test_update_product_not_found(client, admin_headers):
 
 
 def test_delete_product_admin_allowed(client, admin_headers, db_session):
-    from app.products.model import Product
+    from app.models.product import Product
 
     product = Product(name="Monitor", description="Display", price=250.0)
     db_session.add(product)
@@ -105,7 +105,7 @@ def test_delete_product_admin_allowed(client, admin_headers, db_session):
 
 
 def test_delete_product_user_forbidden(client, user_headers, db_session):
-    from app.products.model import Product
+    from app.models.product import Product
 
     product = Product(name="Keyboard", description="Input", price=80.0)
     db_session.add(product)

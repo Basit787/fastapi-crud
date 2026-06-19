@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 
-from app.products.model import Product
-from app.products.schemas import CreateProductSchema
-from app.products.schemas import UpdateProductSchema
+from app.models.product import Product
+from app.schemas.product import CreateProductSchema
+from app.schemas.product import UpdateProductSchema
 
 
 class ProductService:

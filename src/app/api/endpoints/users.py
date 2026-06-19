@@ -3,14 +3,14 @@ from fastapi import Depends
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
-from app.auth.rbac import require_admin_or_self
-from app.auth.rbac import require_permission
-from lib.database import get_db
-from app.users.model import User
-from app.users.schemas import CreateUserSchema
-from app.users.schemas import UpdateUserSchema
-from app.users.schemas import UserResponseSchema
-from app.users.service import UserService
+from app.api.deps import require_admin_or_self
+from app.api.deps import require_permission
+from app.core.database import get_db
+from app.models.user import User
+from app.schemas.user import CreateUserSchema
+from app.schemas.user import UpdateUserSchema
+from app.schemas.user import UserResponseSchema
+from app.services.user import UserService
 
 router = APIRouter(
     prefix="/users",

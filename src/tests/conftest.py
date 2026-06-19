@@ -11,13 +11,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from app.auth.security import create_access_token
-from app.auth.security import hash_password
-from lib.database import Base
-from lib.database import get_db
-from lib.roles import Role
+from app.core.database import Base
+from app.core.database import get_db
+from app.core.roles import Role
+from app.core.security import create_access_token
+from app.core.security import hash_password
 from app.main import app
-from app.users.model import User
+from app.models.user import User
 
 
 @pytest.fixture

@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-from lib.database import Base
-from lib.database import engine
-from app.products.model import Product  # noqa: F401
-from app.router import router
-from app.users.model import User  # noqa: F401
+from app.api.router import api_router
+from app.core.database import Base
+from app.core.database import engine
+from app.models.product import Product  # noqa: F401
+from app.models.user import User  # noqa: F401
 
 Base.metadata.create_all(bind=engine)
 
@@ -12,4 +12,4 @@ app = FastAPI(
     title="FastAPI CRUD",
 )
 
-app.include_router(router)
+app.include_router(api_router)

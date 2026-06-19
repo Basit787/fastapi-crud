@@ -31,7 +31,7 @@ testpaths = ["src/tests"]
 pythonpath = [".", "src"]
 
 [tool.coverage.run]
-source = ["src/app", "src/lib"]
+source = ["src/app"]
 
 [tool.coverage.report]
 fail_under = 95

@@ -1,11 +1,11 @@
 import jwt
 
-from app.auth.security import create_access_token
-from app.auth.security import decode_access_token
-from app.auth.security import hash_password
-from app.auth.security import verify_password
-from lib.settings import JWT_ALGORITHM
-from lib.settings import JWT_SECRET_KEY
+from app.core.config import JWT_ALGORITHM
+from app.core.config import JWT_SECRET_KEY
+from app.core.security import create_access_token
+from app.core.security import decode_access_token
+from app.core.security import hash_password
+from app.core.security import verify_password
 
 
 def test_hash_and_verify_password():

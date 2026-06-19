@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 
-from app.auth.security import hash_password
-from app.users.model import User
-from app.users.schemas import CreateUserSchema
-from app.users.schemas import UpdateUserSchema
+from app.core.security import hash_password
+from app.models.user import User
+from app.schemas.user import CreateUserSchema
+from app.schemas.user import UpdateUserSchema
 
 
 class UserService:

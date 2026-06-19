@@ -1,8 +1,8 @@
-from app.auth.security import hash_password
-from app.products.model import Product
-from app.users.model import User
-from lib.database import SessionLocal
-from lib.roles import Role
+from app.core.security import hash_password
+from app.core.database import SessionLocal
+from app.core.roles import Role
+from app.models.product import Product
+from app.models.user import User
 
 
 def seed_users(db):
