@@ -3,6 +3,7 @@ from fastapi import Depends
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
+
 from app.config.database import get_db
 from app.schemas.user_schema import (
     CreateUserSchema,
