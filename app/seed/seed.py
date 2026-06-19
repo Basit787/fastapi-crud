@@ -1,4 +1,5 @@
 from app.config.database import SessionLocal
+from app.models.roles import Role
 from app.models.users import User
 from app.models.products import Product
 from app.utils.security import hash_password
@@ -14,11 +15,19 @@ def seed_users(db):
             name="James",
             email="james@example.com",
             hashed_password=hash_password("password123"),
+            role=Role.ADMIN,
         ),
         User(
             name="Jane",
             email="jane@example.com",
             hashed_password=hash_password("password123"),
+            role=Role.MANAGER,
+        ),
+        User(
+            name="John",
+            email="john@example.com",
+            hashed_password=hash_password("password123"),
+            role=Role.USER,
         ),
     ]
 

@@ -2,6 +2,7 @@ from fastapi import HTTPException
 from fastapi import status
 from sqlalchemy.orm import Session
 
+from app.models.roles import Role
 from app.models.users import User
 from app.schemas.auth_schema import RegisterSchema
 from app.utils.security import create_access_token
@@ -27,6 +28,7 @@ class AuthService:
             name=payload.name,
             email=payload.email,
             hashed_password=hash_password(payload.password),
+            role=Role.USER,
         )
 
         db.add(user)

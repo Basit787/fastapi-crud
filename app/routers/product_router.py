@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.config.database import get_db
-from app.dependencies.auth import get_current_user
+from app.dependencies.rbac import require_permission
 from app.models.users import User
 from app.schemas.product_schema import (
     CreateProductSchema,
@@ -26,7 +26,7 @@ router = APIRouter(
 def create_product(
     payload: CreateProductSchema,
     db: Session = Depends(get_db),
-    _: User = Depends(get_current_user),
+    _: User = Depends(require_permission("products:create")),
 ):
     return ProductService.create_product(
         db,
@@ -74,7 +74,7 @@ def update_product(
     product_id: int,
     payload: UpdateProductSchema,
     db: Session = Depends(get_db),
-    _: User = Depends(get_current_user),
+    _: User = Depends(require_permission("products:update")),
 ):
     product = ProductService.update_product(
         db,
@@ -95,7 +95,7 @@ def update_product(
 def delete_product(
     product_id: int,
     db: Session = Depends(get_db),
-    _: User = Depends(get_current_user),
+    _: User = Depends(require_permission("products:delete")),
 ):
     product = ProductService.delete_product(
         db,

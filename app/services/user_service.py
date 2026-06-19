@@ -16,6 +16,7 @@ class UserService:
             name=payload.name,
             email=payload.email,
             hashed_password=hash_password(payload.password),
+            role=payload.role,
         )
 
         db.add(user)
