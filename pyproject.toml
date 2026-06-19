@@ -19,6 +19,22 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
+    "pre-commit>=4.5.1",
+    "pytest-cov>=7.0.0",
+    "pytest>=9.0.2",
     "ruff>=0.15.18",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_empty = true
 
